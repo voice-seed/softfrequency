@@ -1,5 +1,4 @@
 import '../styles/globals.css';
-import { Footer } from '../components/footer';
 import { Header } from '../components/header';
 
 export const metadata = {
@@ -23,7 +22,7 @@ export default function RootLayout({ children }) {
           <div className="flex flex-col w-full max-w-5xl mx-auto grow">
             <Header />
             <main className="grow py-10">{children}</main>
-            <Footer />
+            {/* Footer removed */}
           </div>
         </div>
       </body>
