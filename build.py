@@ -17,3 +17,10 @@ for md in SRC.rglob("*.md"):
 {body}
 </main>"""
     out.write_text(html, encoding="utf-8")
+# --- ensure stylesheet is published ---
+root_css = pathlib.Path("styles.css")
+if root_css.exists():
+    (DST / "styles.css").write_text(
+        root_css.read_text(encoding="utf-8"),
+        encoding="utf-8"
+    )
