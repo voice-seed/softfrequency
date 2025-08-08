@@ -2,5 +2,5 @@
   command = "pip install markdown && python build.py"
   publish = "public"
 
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
+[build.environment]
+  PYTHON_VERSION = "3.9"
