@@ -103,17 +103,18 @@ root_css = ROOT / "styles.css"
 if root_css.exists():
     (DST / "styles.css").write_text(root_css.read_text(encoding="utf-8"), encoding="utf-8")
 
-# --- Global fallback index (links to all HTML) ---
-items = []
-for html_file in DST.rglob("*.html"):
-    if html_file.name == "index.html":
-        continue
-    rel = html_file.relative_to(DST).as_posix()
-    label = rel.replace(".html", "")
-    items.append((label, "/" + rel))
-items.sort()
-links = "\n".join(f'<li><a href="{href}">{label}</a></li>' for label, href in items)
-index_html = f"""<!doctype html><meta charset="utf-8">
+# --- Global fallback index (only if no real homepage) ---
+if not (SRC / "pages" / "index.md").exists():
+    items = []
+    for html_file in DST.rglob("*.html"):
+        if html_file.name == "index.html":
+            continue
+        rel = html_file.relative_to(DST).as_posix()
+        label = rel.replace(".html", "")
+        items.append((label, "/" + rel))
+    items.sort()
+    links = "\n".join(f'<li><a href="{href}">{label}</a></li>' for label, href in items)
+    index_html = f"""<!doctype html><meta charset="utf-8">
 <title>SoftFrequency</title>
 <link rel="stylesheet" href="/styles.css">
 <main class="container">
@@ -123,7 +124,7 @@ index_html = f"""<!doctype html><meta charset="utf-8">
     {links}
   </ul>
 </main>"""
-(DST / "index.html").write_text(index_html, encoding="utf-8")
+    (DST / "index.html").write_text(index_html, encoding="utf-8")
 
 # --- Sitemap + robots + _headers copy ---
 # collect URLs (dedup with a set)
