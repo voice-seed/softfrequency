@@ -5,6 +5,5 @@
 [build.environment]
   PYTHON_VERSION = "3.9"
 
-# Explicitly tell Netlify where (not) to look for functions
 [functions]
   directory = "no-functions"
