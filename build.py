@@ -1,26 +1,27 @@
-import pathlib, markdown
-
-SRC = pathlib.Path("content")
-DST = pathlib.Path("public")
-DST.mkdir(parents=True, exist_ok=True)
-
-for md in SRC.rglob("*.md"):
-    rel = md.relative_to(SRC)
-    out = (DST / rel).with_suffix(".html")
-    out.parent.mkdir(parents=True, exist_ok=True)
-    text = md.read_text(encoding="utf-8")
-    body = markdown.markdown(text, extensions=["fenced_code", "tables"])
-    html = f"""<!doctype html><meta charset="utf-8">
-<title>SoftFrequency</title>
+def layout(title: str, inner: str, desc: str = "Ambient products. Natural tech. A future that breathes.", path: str = "/"):
+    year = datetime.date.today().year
+    BASE = "https://softfrequency.netlify.app"  # swap when custom domain is live
+    url = BASE.rstrip("/") + path
+    ogimg = "/assets/og-default.jpg"
+    return f"""<!doctype html><meta charset="utf-8">
+<title>{title} – SoftFrequency</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="{desc}">
+<link rel="canonical" href="{url}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{title} – SoftFrequency">
+<meta property="og:description" content="{desc}">
+<meta property="og:url" content="{url}">
+<meta property="og:image" content="{ogimg}">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="/styles.css">
-<main class="container">
-{body}
-</main>"""
-    out.write_text(html, encoding="utf-8")
-# --- ensure stylesheet is published ---
-root_css = pathlib.Path("styles.css")
-if root_css.exists():
-    (DST / "styles.css").write_text(
-        root_css.read_text(encoding="utf-8"),
-        encoding="utf-8"
-    )
+<div class="container">
+  <nav class="nav">
+    <a href="/">Home</a>
+    <a href="/blog/">Blog</a>
+    <a href="/about.html">About</a>
+    <a href="/contact.html">Contact</a>
+  </nav>
+  {inner}
+  <footer>© {year} SoftFrequency</footer>
+</div>"""
