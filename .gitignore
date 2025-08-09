@@ -42,6 +42,7 @@ yarn-error.log*
 # Python & build artifacts
 public/*
 !public/index.html
+!public/_redirects
 .venv/
 __pycache__/
 *.pyc
