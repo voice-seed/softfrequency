@@ -1,42 +1,112 @@
 # SoftFrequency
 *Ambient products. Natural tech. A future that breathes.*
 
-<section class="hero">
-  <h1>Make your space feel alive—soft light, clean air, quiet tech.</h1>
-  <p>From solar flame lanterns to smart diffusers, we curate tools that calm the nervous system and lift the room.</p>
-  <p><a class="btn" href="/about.html">What is SoftFrequency?</a> <a class="btn ghost" href="/contact.html">Say hello</a></p>
+<!-- HERO -->
+<section class="hero hero-dark">
+  <div class="hero-inner">
+    <h1>Ambient Products. Natural Tech. A Future That Breathes.</h1>
+    <p>From solar flame lanterns to smart diffusers—crafted for presence, softness, and energy alignment.</p>
+    <p class="cta-row">
+      <a class="btn" href="/products.html">Shop Ritual Tools</a>
+      <a class="btn ghost" href="/blog/">Read the Guide</a>
+    </p>
+  </div>
+  <div class="hero-bg" style="background-image:url('/assets/hero.jpg')"></div>
 </section>
 
-<section class="value">
-  <h2>Why this matters</h2>
-  <ul class="grid3">
-    <li><strong>Soft Light</strong><br/>Circadian-friendly glow. No harsh blue spikes.</li>
-    <li><strong>Clean Scent</strong><br/>Aromatherapy, not aerosol. Plant-first.</li>
-    <li><strong>Quiet Tech</strong><br/>Design that vanishes into the vibe.</li>
+<!-- VALUE PROPS (3-UP) -->
+<section>
+  <ul class="grid3 value">
+    <li>
+      <div class="icon glow">☀️</div>
+      <h3>Sustainable Power</h3>
+      <p>Solar + low-energy tech for a lighter footprint and longer nights.</p>
+    </li>
+    <li>
+      <div class="icon glow">🧭</div>
+      <h3>Mindful Design</h3>
+      <p>Every product tuned for harmony—soft light, calm air, quiet tech.</p>
+    </li>
+    <li>
+      <div class="icon glow">🪴</div>
+      <h3>Community</h3>
+      <p>Telegram, WhatsApp, Reddit—learn rituals, share setups, grow together.</p>
+    </li>
   </ul>
 </section>
 
+<!-- FEATURED PRODUCTS -->
 <section class="featured">
-  <h2>Featured rituals</h2>
-  <ul class="cards">
-    <li><img src="/assets/lantern.jpg" alt="Solar flame lantern"><h3>Solar Flame Lantern</h3><p>Real firelight feel, no cords.</p></li>
-    <li><img src="/assets/diffuser.jpg" alt="Smart diffuser"><h3>Smart Diffuser</h3><p>Voice-controlled calm.</p></li>
-    <li><img src="/assets/glow-cube.jpg" alt="Glow cube"><h3>Glow Cubes</h3><p>Minimal blocks, maximal mood.</p></li>
+  <ul class="cards cards-2">
+    <li>
+      <img src="/assets/lantern.jpg" alt="Solar Flame Lantern">
+      <h3>Solar Flame Lantern</h3>
+      <p>Real firelight feel, no cords. Balcony dinners, camp nights, mindful glow.</p>
+      <p><a class="btn small" href="/products/solar-flame-lantern.html">View Product</a></p>
+    </li>
+    <li>
+      <img src="/assets/diffuser.jpg" alt="Smart Diffuser">
+      <h3>Smart Diffuser</h3>
+      <p>Voice-controlled aromatherapy. Schedules that match your rhythm.</p>
+      <p><a class="btn small" href="/products/smart-diffuser.html">View Product</a></p>
+    </li>
   </ul>
 </section>
 
-<section class="content">
-  <h2>Newest post</h2>
-  <p><a href="/blog/2025-08-08--blog-draft-about-cozy-lighting-for-studio-apartments.html">
-    Cozy Lighting for Studio Apartments →</a></p>
-  <p><a class="ghost" href="/blog/">Read all notes</a></p>
+<!-- LIFESTYLE BREAK -->
+<section class="break">
+  <div class="break-img" style="background-image:url('/assets/lifestyle.jpg')"></div>
+  <div class="break-copy">
+    <h2>Lighting is more than visibility.</h2>
+    <p>It’s rhythm. It’s presence. Design your evening to exhale.</p>
+  </div>
 </section>
 
-<section class="cta">
-  <h2>Join the signal</h2>
+<!-- SEGMENTS (from your blueprint) -->
+<section>
+  <h2>Choose Your Vibe</h2>
+  <ul class="grid4 vibe">
+    <li>
+      <img src="/assets/neon.jpg" alt="Neon & Futuristic">
+      <h3>Neon & Futuristic</h3>
+      <p>Playful color, reactive light. Scenes shift on command.</p>
+    </li>
+    <li>
+      <img src="/assets/boho.jpg" alt="Natural & Bohemian">
+      <h3>Natural & Bohemian</h3>
+      <p>Layered warm lamps, plants, and handcrafted textures.</p>
+    </li>
+    <li>
+      <img src="/assets/japandi.jpg" alt="Minimalist Zen / Japandi">
+      <h3>Minimalist Zen</h3>
+      <p>Warm minimalism, circadian light, quiet order.</p>
+    </li>
+    <li>
+      <img src="/assets/maximalist.jpg" alt="Vintage & Maximalist">
+      <h3>Vintage & Maximalist</h3>
+      <p>Statement lighting, stories in layers, curated abundance.</p>
+    </li>
+  </ul>
+</section>
+
+<!-- BLOG HIGHLIGHTS (auto list will still live at /blog/) -->
+<section>
+  <h2>Newest Notes</h2>
+  <p>Explore practical guides and rituals for light, scent, and calm tech.</p>
+  <p><a class="btn ghost" href="/blog/">Browse the Blog</a></p>
+</section>
+
+<!-- COMMUNITY CTA -->
+<section class="cta cta-dark">
+  <h2>Join the Resonance</h2>
   <p>One short email when we drop guides, tools, and rituals.</p>
   <form name="newsletter" method="POST" data-netlify="true">
     <input type="email" name="email" placeholder="you@space.com" required>
     <button type="submit">Subscribe</button>
   </form>
+  <p class="micro">
+    Prefer chat? <a href="https://t.me/" target="_blank" rel="noopener">Telegram</a> ·
+    <a href="https://wa.me/" target="_blank" rel="noopener">WhatsApp</a> ·
+    <a href="https://reddit.com/" target="_blank" rel="noopener">Reddit</a>
+  </p>
 </section>
