@@ -1,10 +1,36 @@
 <!doctype html><meta charset="utf-8">
 <title>SoftFrequency</title>
 <link rel="stylesheet" href="/styles.css">
-<main class="container">
-  <h1>SoftFrequency</h1>
-  <p>Welcome. Newest post:</p>
-  <ul>
-    <li><a href="/blog.html">Cozy Lighting for Studio Apartments</a></li>
-  </ul>
-</main>
+<div class="container">
+  <nav class="nav">
+    <a href="/">Home</a>
+    <a href="/blog.html">Blog</a>
+    <a href="/about.html">About</a>
+    <a href="/contact.html">Contact</a>
+  </nav>
+
+  <section class="hero">
+    <h1>SoftFrequency</h1>
+    <p>Thoughtful notes on space, light, and living well.</p>
+  </section>
+
+  <section class="grid">
+    <div class="card">
+      <h3>Newest post</h3>
+      <p><a href="/blog.html">Cozy Lighting for Studio Apartments</a></p>
+    </div>
+
+    <div class="card">
+      <h3>About</h3>
+      <p>What is SoftFrequency? <a href="/about.html">Learn more →</a></p>
+    </div>
+
+    <div class="card">
+      <h3>Contact</h3>
+      <p>Say hello: <a href="/contact.html">Get in touch →</a></p>
+    </div>
+  </section>
+
+  <footer>© <span id="y"></span> SoftFrequency</footer>
+</div>
+<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
