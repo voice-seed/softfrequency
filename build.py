@@ -103,6 +103,15 @@ if ASSETS.exists():
             target.parent.mkdir(parents=True, exist_ok=True)
             target.write_bytes(p.read_bytes())
 
+# --- Admin (Decap CMS) ---
+ADMIN = ROOT / "admin"
+if ADMIN.exists():
+    for p in ADMIN.rglob("*"):
+        if p.is_file():
+            target = DST / "admin" / p.relative_to(ADMIN)
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_bytes(p.read_bytes())
+
 # --- Stylesheet ---
 root_css = ROOT / "styles.css"
 if root_css.exists():
@@ -158,3 +167,4 @@ sitemap_xml.append("</urlset>")
 headers_src = ROOT / "_headers"
 if headers_src.exists():
     (DST / "_headers").write_text(headers_src.read_text(encoding="utf-8"), encoding="utf-8")
+
