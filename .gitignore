@@ -40,7 +40,10 @@ yarn-error.log*
 .netlify
 
 # Python & build artifacts
-public/
+public/*
+!public/index.html
 .venv/
 __pycache__/
 *.pyc
+
+
